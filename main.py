@@ -1,7 +1,37 @@
 import math
 import tkinter as tk
 from tkinter import messagebox
+from modos import MODOS, aplicar_modo
 
+def alternar_modo():
+    global modo_atual
+    modo_atual = "escuro" if modo_atual == "claro" else "claro"
+    
+    # Lista de todos os widgets que precisam ser alterados
+    widgets = [
+        ("frame", frame_principal),
+        ("frame", frame_historico),
+        ("label", rotulo_a),
+        ("label", rotulo_b),
+        ("label", rotulo_c),
+        ("label", resultado_delta),
+        ("label", resultado_x1),
+        ("label", resultado_x2),
+        ("label", historico_label),
+        ("entry", entrada_a),
+        ("entry", entrada_b),
+        ("entry", entrada_c),
+        ("text", historico_text),
+        ("button", botao_calcular),
+        ("button", botao_limpar),
+        ("button", botao_modo),
+        ("scrollbar", scrollbar),
+    ]
+
+    aplicar_modo(janela, widgets, modo_atual)
+    botao_modo.config(text="Modo Claro" if modo_atual == "escuro" else "Modo Escuro")
+
+   
 def calcular_raizes():
     try:
         a = float(entrada_a.get())
@@ -34,7 +64,8 @@ def calcular_raizes():
         
     except ValueError:
         messagebox.showerror("Erro", "Por favor, insira valores válidos para A, B e C.")
-
+    
+    #limpar historico
 def limpar_historico():
     confirmacao = messagebox.askyesno("Confirmar", "Tem certeza que deseja limpar o histórico?")
     if confirmacao:
@@ -42,6 +73,18 @@ def limpar_historico():
 
 janela = tk.Tk()
 janela.title("Calculadora de Bhaskara")
+
+modo_atual = "claro"
+
+estilo_botao = {
+    "activebackground": "#555555",
+    "activeforeground": "#ffffff",
+    "borderwidth": 1,
+    "relief": "raised",                
+    "padx": 10,
+    "pady": 5,
+    "font": ("Arial", 10)
+}
 
 # responsividade da janela
 janela.columnconfigure(0, weight=1)  # coluna 0 se expande
@@ -52,6 +95,9 @@ frame_principal.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
 
 # responsividade do frame principal
 frame_principal.columnconfigure(1, weight=1)  # coluna 1 do frame se expande
+
+botao_modo = tk.Button(frame_principal, text="Modo Escuro", command=alternar_modo, **estilo_botao)
+botao_modo.grid(row=0, column=2, padx=10, pady=10, sticky="e")
 
 rotulo_a = tk.Label(frame_principal, text="Valor de A:")
 rotulo_a.grid(row=0, column=0, padx=10, pady=10, sticky="w")
@@ -68,7 +114,7 @@ rotulo_c.grid(row=2, column=0, padx=10, pady=10, sticky="w")
 entrada_c = tk.Entry(frame_principal)
 entrada_c.grid(row=2, column=1, padx=10, pady=10, sticky="ew")
 
-botao_calcular = tk.Button(frame_principal, text="Calcular", command=calcular_raizes)
+botao_calcular = tk.Button(frame_principal, text="Calcular", command=calcular_raizes, **estilo_botao)
 botao_calcular.grid(row=3, column=0, columnspan=2, pady=10, sticky="ew")
 
 resultado_delta = tk.Label(frame_principal, text="Delta (Δ): ")
@@ -98,12 +144,14 @@ scrollbar = tk.Scrollbar(frame_historico, command=historico_text.yview)
 scrollbar.grid(row=1, column=1, sticky="ns")
 historico_text.config(yscrollcommand=scrollbar.set)
 
-botao_limpar = tk.Button(frame_historico, text="Limpar Histórico", command=limpar_historico)
+botao_limpar = tk.Button(frame_historico, text="Limpar Histórico", command=limpar_historico, **estilo_botao)
 botao_limpar.grid(row=2, column=0, pady=5, sticky="ew")
 
 # responsividade da janela principal
 janela.columnconfigure(0, weight=1)
 janela.rowconfigure(0, weight=1)
 janela.rowconfigure(1, weight=1)
+
+alternar_modo()
 
 janela.mainloop()
