@@ -31,7 +31,6 @@ def alternar_modo():
     aplicar_modo(janela, widgets, modo_atual)
     botao_modo.config(text="Modo Claro" if modo_atual == "escuro" else "Modo Escuro")
 
-   
 def calcular_raizes():
     try:
         a = float(entrada_a.get())
