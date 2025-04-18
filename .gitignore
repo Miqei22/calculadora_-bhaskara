@@ -1,0 +1,23 @@
+# Arquivos de cache e bytecode do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambiente virtual (venv, .venv, env)
+venv/
+.venv/
+env/
+
+# Arquivos de configuração de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs e arquivos temporários
+*.log
+*.tmp
