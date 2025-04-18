@@ -21,3 +21,6 @@ Thumbs.db
 # Logs e arquivos temporários
 *.log
 *.tmp
+
+# Arquivo do macOS
+.DS_Store
