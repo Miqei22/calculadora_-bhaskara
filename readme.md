@@ -41,5 +41,5 @@ x1 = (5 + √1)/2 = 3.0
 x2 = (5 - √1)/2 = 2.0
 ```
 
-### 📄 Licença
+## 📄 Licença
 MIT License - veja LICENSE para detalhes.
