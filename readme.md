@@ -39,8 +39,11 @@ Delta = (-5)² - 4*1*6 = 1
 
 x1 = (5 + √1)/2 = 3.0
 x2 = (5 - √1)/2 = 2.0
-x
 ```
 
-### 📄 Licença
-MIT License - veja LICENSE para detalhes.
+## 🧪 Testes
+- Essa branch é destinada somente para testes, fique a vontade para executar seus testes e realizar pull requests!
+
+
+## 📄 Licença
+- MIT License - veja LICENSE para detalhes.
