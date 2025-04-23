@@ -124,10 +124,6 @@ def calcular_raizes():
         botao_grafico.config(state=tk.DISABLED)
         messagebox.showerror("Erro", "Por favor, insira valores válidos para A, B e C.")
 
-def limpar_historico():
-    confirmacao = messagebox.askyesno("Confirmar", "Tem certeza que deseja limpar o histórico?")
-    if confirmacao:
-        historico_text.delete(1.0, tk.END)
 
 def mudar_foco(event):
     widget_atual = event.widget
@@ -190,6 +186,13 @@ def plotar_grafico():
         
     except ValueError:
         messagebox.showerror("Erro", "Valores inválidos para plotar o gráfico")
+
+def limpar_historico():
+    confirmacao = messagebox.askyesno("Confirmar", "Tem certeza que deseja limpar o histórico?")
+    if confirmacao:
+        historico_text.config(state="normal")
+        historico_text.delete(1.0, tk.END)
+        historico_text.config(state="disabled")
 
 # Configuração da janela principal
 janela = tk.Tk()
