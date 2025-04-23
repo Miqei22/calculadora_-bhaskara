@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/lukspbs/calculadora_bhaskara)
 ![GitHub repo size](https://img.shields.io/github/repo-size/lukspbs/calculadora_bhaskara)
-![GitHub license](https://img.shields.io/github/license/lukspbs/calculadora_bhaskara)
+![GitHub license](https://img.shields.io/badge/license-lukspbs-red)
 
 Uma calculadora simples para resolver equações quadráticas usando a fórmula de Bhaskara.
 
