@@ -46,4 +46,4 @@ x2 = (5 - √1)/2 = 2.0
 
 
 ## 📄 Licença
-MIT License - veja [LICENSE](https://github.com/lukspbs/calculadora_bhaskara/tree/testes?tab=License-1-ov-file) para detalhes.
+Academic License - veja [LICENSE](https://github.com/lukspbs/calculadora_bhaskara/tree/testes?tab=License-1-ov-file) para detalhes.
