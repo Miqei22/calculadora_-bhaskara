@@ -17,14 +17,14 @@ Uma calculadora simples para resolver equações quadráticas usando a fórmula 
 ```bash
 git clone https://github.com/lukspbs/calculadora_bhaskara.git
 cd calculadora_bhaskara
-python bhaskara.py
+python main.py
 ```
 
 ## 🚀 Como Usar
 - Execute o programa e insira os coeficientes quando solicitado:
 
 ```bash
-python bhaskara.py
+python main.py
 ```
 
 ## 📝 Exemplo
